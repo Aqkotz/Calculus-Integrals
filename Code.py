@@ -30,14 +30,15 @@ for i in range (n):
     else:
         SIMP += 4*f1
     x = x2
-    
-    
+
+x += h
+SIMP += eval(f)
 print('LRAM = ',LRAM)
 print('RRAM = ',RRAM)
 print('MRAM = ',MRAM)
 
 trap = (LRAM+RRAM)/2
-SIMP = (SIMP*h)/3
+SIMP = ((SIMP)*h)/3
 
 print("Trap = ",trap)
 print("SIMP = ",SIMP)
