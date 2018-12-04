@@ -1,10 +1,13 @@
-a = float(input('Enter left endpoint'))
-b = float(input('Enter right endpoint'))
-n = int(input('Enter number of subintervals'))
-f = input('Enter the function')
+import math
+
+a = float(input('Enter left endpoint: '))
+b = float(input('Enter right endpoint: '))
+n = int(input('Enter number of subintervals: '))
+f = input('Enter the function: ')
 LRAM = 0.0
 RRAM = 0.0
 MRAM = 0.0
+SIMP = 0.0
 x = a
 h = (b - a)/n
 for i in range (n):
@@ -18,8 +21,23 @@ for i in range (n):
     x = (x1 + x2)/2
     fm = eval(f)
     MRAM = MRAM + fm*h
+    if i == 0:
+        SIMP += f1
+    elif i == (n-1):
+        SIMP += f2
+    elif (i+1)%4 == 0:
+        SIMP += 2*f1
+    elif (i+1)%2 == 0:
+        SIMP += 4*f1
     x = x2
+    
     
 print('LRAM = ',LRAM)
 print('RRAM = ',RRAM)
 print('MRAM = ',MRAM)
+
+trap = (LRAM+RRAM)/2
+
+print("Trap = ",trap)
+print("SIMP = ",SIMP)
+
