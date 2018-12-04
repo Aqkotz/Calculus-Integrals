@@ -37,6 +37,7 @@ print('RRAM = ',RRAM)
 print('MRAM = ',MRAM)
 
 trap = (LRAM+RRAM)/2
+SIMP = (SIMP*h)/3
 
 print("Trap = ",trap)
 print("SIMP = ",SIMP)
