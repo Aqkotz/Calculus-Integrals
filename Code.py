@@ -24,10 +24,10 @@ for i in range (n):
     if i == 0:
         SIMP += f1
     elif i == (n-1):
-        SIMP += f2
-    elif (i+1)%4 == 0:
+        SIMP += f1
+    elif i%2 == 0:
         SIMP += 2*f1
-    elif (i+1)%2 == 0:
+    else:
         SIMP += 4*f1
     x = x2
     
